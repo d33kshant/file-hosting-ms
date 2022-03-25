@@ -1,0 +1,16 @@
+{
+  "name": "file-hosting-ms",
+  "version": "1.0.0",
+  "description": "Simple and small file hosting microservice with Node and express",
+  "main": "index.js",
+  "repository": "git@github.com:d33kshant/file-hosting-ms.git",
+  "author": "Deekshant Yadav <d33kshant@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
