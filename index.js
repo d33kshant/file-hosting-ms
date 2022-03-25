@@ -37,9 +37,9 @@ app.post('/upload', (req, res) => {
 				url: `${BASE_URL}/file/${new_name}`,
 			})
 		}
-	} catch (error) {
+	} catch (_) {
 		res.json({
-			error
+			error: "Something went wrong."
 		})
 	}
 })
