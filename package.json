@@ -6,6 +6,9 @@
   "repository": "git@github.com:d33kshant/file-hosting-ms.git",
   "author": "Deekshant Yadav <d33kshant@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index"
+  },
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.3"
