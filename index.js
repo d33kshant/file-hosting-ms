@@ -5,12 +5,15 @@ const path = require('path')
 const { v4: uuid4 } = require('uuid')
 
 const PORT = process.env.PORT || 5000
+const BASE_URL = process.env.BASE_URL
 
 const app = express()
 app.use(express.json())
 app.use(fileupload({ createParentPath: true }))
 
 app.use('/', express.static('public'))
+
+app.use('/file', express.static(path.join(__dirname, 'files')))
 
 app.post('/upload', (req, res) => {
 	try {
@@ -30,7 +33,8 @@ app.post('/upload', (req, res) => {
 				message: "File uploaded.",
 				name: new_name,
 				type: image.mimetype,
-				size: image.size
+				size: image.size,
+				url: `${BASE_URL}/file/${new_name}`,
 			})
 		}
 	} catch (error) {
