@@ -22,18 +22,18 @@ app.post('/upload', (req, res) => {
 				error: "No file to upload."
 			})
 		} else {
-			const image = req.files['image']
-			const name = image.name
+			const file = req.files['file']
+			const name = file.name
 			const extension = name.substring(name.indexOf('.'), name.length)
 
 			const new_name = `${uuid4()}${extension}`
-			image.mv(path.join(__dirname, path.join('files', new_name)))
+			file.mv(path.join(__dirname, path.join('files', new_name)))
 
 			res.json({
 				message: "File uploaded.",
 				name: new_name,
-				type: image.mimetype,
-				size: image.size,
+				type: file.mimetype,
+				size: file.size,
 				url: `${BASE_URL}/file/${new_name}`,
 			})
 		}
